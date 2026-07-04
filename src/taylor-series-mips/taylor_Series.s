@@ -46,16 +46,16 @@ For_Loop_Main:								# The label for the for - loop in main function	   <------
 											# -																			^
 		c.lt.s $f20, $f30					# if $f20(<=2.0) <= $f30(<=i)												|
 		bc1t End_For_Main					# branch to (End_For_Main) if the flag is set ----------------------------->|-->
-											# -																			|	|	
+											# -																			|	|
 		li $v0, 4 							# 4 is the code for printing strings 										|	|
 		la $a0, message1 					# load address of message1													|	|
 		syscall								# execute the system call, print "terms[" 									|   |
-											# -																			|   |		
+											# -																			|   |
 		li $v0, 1 							# 1 is the code for printing integers										|   |
 		move $a0, $s1						# $a0 <= $s1(<=100) because move = copy in the integers numbers				|   |
 		syscall 							# execute the system call, print n											|   |
-											# -																			|	|		
-		li $v0, 4 							# 4 is the code for printing strings										|   | 
+											# -																			|	|	
+		li $v0, 4 							# 4 is the code for printing strings										|   |
 		la $a0, message2 					# load address of message2													|   |
 		syscall								# execute the system call, print "] : ln("									|   |
 											# -																			|   |
@@ -77,17 +77,17 @@ For_Loop_Main:								# The label for the for - loop in main function	   <------
 		li $v0, 2							# 2 is the code for printing float number								    |   |	 |
 		mov.s $f12, $f2						# $f12 <= $f2(<=result Taylor_ln) because mov.s = copy in the floats numbers|   |	 |
 		syscall 							# execute the system call, print the result of the (Taylor_ln) function     |   |	 |
-											# -																			|   |	 |	
+											# -																			|   |	 |
 		li $v0, 4 							# 4 is the code for printing strings										|   |	 |
 		la $a0, newLine 					# load address of newLine													|   |	 |
 		syscall								# execute the system call, print "\n"										|   |	 |
-											# -																			|   |	 |	
+											# -																			|   |	 |
 #############################################################################											|   |	 |
 											# -																			|   |	 |
 		li $v0, 4 							# 4 is the code for printing strings 										|   |	 |
 		la $a0, message1 					# load address of message1													|   |	 |
 		syscall								# execute the system call, print "terms["									|   |	 |
-											# -																			|   |	 |	
+											# -																			|   |	 |
 		li $v0, 1 							# 1 is the code for printing integers										|   |	 |
 		move $a0, $s1						# $a0 <= $s1(<=100) because move = copy in the integers numbers				|   |	 |
 		syscall 							# execute the system call, print n											|   |	 |
@@ -99,17 +99,17 @@ For_Loop_Main:								# The label for the for - loop in main function	   <------
 		li $v0, 2							# 2 is the code for printing float number									|   |	 |
 		mov.s $f12, $f30					# $f12 <= $f30(<=i) because mov.s = copy in the floats numbers				|   |	 |
 		syscall 							# execute the system call, print i											|   |	 |
-											# -																			|   |	 |	
+											# -																			|   |	 |
 		li $v0, 4 							# 4 is the code for printing strings 										|   |	 |
 		la $a0, message4 					# load address of message4													|   |	 |
 		syscall								# execute the system call, print ")="										|   |	 |
-#for the Taylor_lnRecursive function		# -																			|   |	 |	
+#for the Taylor_lnRecursive function		# -																			|   |	 |
 		mov.s $f14, $f30					# $f14 <= $f30(<=i) because mov.s = copy in the floats numbers				|   |	 |
 		move $a3, $s1						# $a3 <= $s1(<=100) because move = copy in the integers numbers				|   |	 |
 											# -																			|   |	 |
 		jal Taylor_lnRecursive				# jump and link => moves to the target address (Taylor_lnRecursive) AND ----|---|----|--->
 											# AND stores the address of the next instruction in the register $ra 		|   |	 |	 |
-											# -																			|   |	 |	 |			
+											# -																			|   |	 |	 |
 		li $v0, 2							# 2 is the code for printing float number									|   |	 |	 |
 		mov.s $f12, $f2						# $f12 <= $f2(<=result Taylor_lnRecursive)because mov.s = copy in the floats|   |	 |	 |
 		syscall 							# execute the system call, print the result of the Taylor_lnRecursive funct.|   |	 |	 |
@@ -141,7 +141,7 @@ End_For_Main:								# Exit from the main loop  <-------------------------------
 											# -																					 |	 |
 powerR:									    # The label for the powerR function!  <-----------------------------------			 |	 |
 											# -																		 ^			 |	 |
-		addi $sp, $sp, -12                  # prepare stack 														 |			 |	 |					
+		addi $sp, $sp, -12                  # prepare stack 														 |			 |	 |
 		sw $ra, 8($sp)						# save return address in the stack										 |			 |	 |
 		swc1 $f12, 4($sp)                   # save argument $f12( <= x) in the stack								 |			 |	 |
 		sw $a0, 0($sp)                      # save argument $a0( <= n) in the stack 								 |		     |	 |
@@ -167,7 +167,7 @@ greater_than_zero:							# The label for the greater_than_zero. <---------------
 		lw $ra, 8($sp)						# and return address													 |			 |	 |
 											# - 																	 |			 |	 |
 		addi $sp, $sp, 12					# restore stack															 |			 |	 |
-											# -																		 |			 |	 |		
+											# -																		 |			 |	 |
 		mov.s $f5, $f12						# $f5 <= $f12														  	 |			 |	 |
 											# -															          	 |			 |	 |
 		mul.s $f0, $f5, $f0				    # $f0 <= $f5 * $f0 (<= x * powerR value)							  	 |			 |	 |
@@ -186,7 +186,7 @@ greater_than_zero:							# The label for the greater_than_zero. <---------------
 											# -																		 |			 |	 |
 Taylor_lnR:									# The label for the Taylor_lnR function!  <----------------------------------	     |	 |
 											# -																		 ^  ^		 |	 |
-		addi $sp, $sp, -20					# prepare stack 														 |  |		 |	 |					
+		addi $sp, $sp, -20					# prepare stack 														 |  |		 |	 |
 		sw $ra, 16($sp)						# save return address in the stack										 |  |		 |	 |
 		swc1 $f22, 12($sp)					# save argument $f22( <= powerR(-1,i+1))* powerR(x,i)/i) ) in the stack  |  |		 |	 |
 		swc1 $f13, 8($sp)					# save argument $f13( <= x) in the stack								 |  |		 |	 |
@@ -232,7 +232,7 @@ Else_Taylor_lnR:							# The label for the Else_Taylor_lnR	  <------------------
 ############################################# -                                                                      |	|		 |	 |
 		mtc1 $a1, $f10						# $f10 <= $a1 <= i														 |	|		 |	 |
 		cvt.s.w $f16, $f10					# $f16 <= $f10 <= (float) i												 |  |		 |	 |
-											# -																		 |	|		 |	 |		
+											# -																		 |	|		 |	 |
 		div.s $f23, $f23, $f16 				# $f23 <= powerR(x,i)/i													 |	|		 |	 |
 											# -																		 |	|		 |	 |
 		mul.s $f22, $f22, $f23				# $f22 <= $f22 (<= powerR(-1,i+1)) * $f23(<= powerR(x,i)/i)  			 |  |		 |	 |
@@ -278,10 +278,10 @@ Taylor_lnRecursive:							# The label for the Taylor_lnRecursive function! <----
 		add.s $f13, $f14, $f13				# $f13 <= $f14 (<= x) + (-1.0) 											 |	|		 |
 		addi $a1, $zero, 1					# $a1 (<= i in the Taylor_lnR function) <= 1                             |  |		 |
 		move $a2, $a3						# $a2 (<= n in the Taylor_lnR function) <= $a3							 |	|		 |
-											# -																		 |  |		 |	 
-											# jump and link => moves to the target address (Taylor_lnR) AND 	     |  |		 |	 
-		jal Taylor_lnR						# AND stores the address of the next instruction in the register $ra ------->  		 |	 
-											# -																		 ^			 |	 
+											# -																		 |  |		 |
+											# jump and link => moves to the target address (Taylor_lnR) AND 	     |  |		 |
+		jal Taylor_lnR						# AND stores the address of the next instruction in the register $ra ------->  		 |
+											# -																		 ^			 |
 		lw $a3, 0($sp)						# restore initial $a3,													 |			 |
 		lwc1 $f14, 4($sp)					# restore initial $f14													 |			 |
 		lw $ra, 8($sp)						# and return address													 |			 |
@@ -295,8 +295,8 @@ Taylor_lnRecursive:							# The label for the Taylor_lnRecursive function! <----
 											# -																		 |			 |
 		jr $ra								# jump register - back from the process									 |			 |
 											# -																		 |			 |
-#############################################################################										 |			 |   
-											# 																		 |			 |	 
+#############################################################################										 |			 |
+											# 																		 |			 |
 #######################################################################################################			     |		     |   
 # $f14 <= x   #	$a3 <= n # $f2 <= return value  # $t3 <= -1 => $f6 => -1.0        # value of the (ψ)  #				 |			 |   
 # 		      #          ######################## $f8 => -1 ## $f10 and $f16 => i # call to the funct.#				 |			 |   
@@ -356,13 +356,13 @@ Loop_Taylor_ln:								# The label for the for - loop in the Taylor_ln function 
 											# -																			  |		|		
 		mtc1 $s2, $f10						# $f10 <= $s2 <= i															  |		|
 		cvt.s.w $f16, $f10					# $f16 <= $f10 <= (float) i													  |		|
-		div.s $f26, $f26, $f16				# $f26 <= $f26 / $f16 <= ( powerR(x, i) / (float) i )						  |		| 
-											# -																			  |		|	
-		mul.s $f27, $f25, $f26				# $f27 <= $f25 * $f26 <= ( (powerR(-1,i+1))*(powerR(x,i)/i) )				  |		| 
-		add.s $f24, $f24, $f27				# $f24 <= $f24 + $f27 <= sum = sum + (powerR(-1,i+1))*(powerR(x,i)/i);		  |		| 
+		div.s $f26, $f26, $f16				# $f26 <= $f26 / $f16 <= ( powerR(x, i) / (float) i )						  |		|
+											# -																			  |		|
+		mul.s $f27, $f25, $f26				# $f27 <= $f25 * $f26 <= ( (powerR(-1,i+1))*(powerR(x,i)/i) )				  |		|
+		add.s $f24, $f24, $f27				# $f24 <= $f24 + $f27 <= sum = sum + (powerR(-1,i+1))*(powerR(x,i)/i);		  |		|
 											# -																			  |		|
 		addi $s2, $s2, 1					# $s2 <= $s2 + 1 <= i++;	                                                  |  	|
-											# -                                                                			  |  	|		
+											# -                                                                			  |  	|
 		j Loop_Taylor_ln					# jump ----------------------------------------------------------------------------->
 											# -																			  v
 End_For:									# Exit from the Taylor_ln loop  <----------------------------------------------
