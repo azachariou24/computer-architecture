@@ -33,6 +33,8 @@ The repository is intended as a collection of well-documented educational projec
 ```text
 computer-architecture/
 │
+├── .gitattributes
+├── .gitignore
 ├── images/
 ├── LICENSE
 ├── README.md

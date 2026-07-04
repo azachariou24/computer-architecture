@@ -1,0 +1,11 @@
+# Normalize text files automatically
+* text=auto
+
+# Source code
+*.s      text eol=lf
+*.c      text eol=lf
+*.h      text eol=lf
+
+# Documentation
+*.md     text eol=lf
+*.txt    text eol=lf

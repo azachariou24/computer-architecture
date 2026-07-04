@@ -1,0 +1,23 @@
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# IDE settings
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+
+# Build artifacts
+*.o
+*.obj
+*.exe
+*.out
+
+# Archives
+*.zip
+*.tar
+*.gz

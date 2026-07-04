@@ -48,7 +48,18 @@ taylor-series-mips/
 │   └── sample-output.txt
 ├── taylor_series.c
 └── taylor_series.s
+└── taylor_series_annotated.s
 ```
+
+---
+
+## Source Files
+
+| File | Description |
+|------|-------------|
+| `taylor_series.s` | Original MIPS Assembly implementation submitted for the course. |
+| `taylor_series_annotated.s` | Fully annotated version with additional educational comments and GitHub-friendly diagrams. |
+| `taylor_series.c` | Equivalent C implementation used for comparison and verification. |
 
 ---
 
